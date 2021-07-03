@@ -1,0 +1,101 @@
+//register
+POST http://localhost:4500/api/register
+Content-Type: application/json
+
+ {
+    "name": "avishy",
+    "email":"p@a.com",
+    "password": "1234567",
+    "nickname": "avish"
+}
+###
+//login
+POST http://localhost:4500/api/login
+Content-Type: application/json
+
+ {
+    "email":"p@a.com",
+    "password": "1234567"
+}
+###
+//authorization
+GET http://localhost:4500/api/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDIzZGJjZjQxODliMDBjMjBhZDlmMzciLCJuaWNrbmFtZSI6ImF2aXNoIiwiaWF0IjoxNjEyOTYyNzgxfQ.vHZ3gph1j9PSIWQH6RHXjyJvRbxrrj_dMBXf989QwuA
+
+
+###
+//create product admin
+POST http://localhost:4500/api/add-product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBmZmVhNDNlMGM3YzcxNThiZmY2ZGYiLCJuaWNrbmFtZSI6ImF2aXNoIiwiaWF0IjoxNjExNjYwOTY0fQ.BIaHaJwzu3MbqrJAIFQCF4or106CTQ8GVxKUCRFdMRc
+
+{
+"productName":"Wine",
+"description":"carmel wine",
+"price": 60
+}
+###
+//get all products
+GET http://localhost:4500/api/get-product
+Content-Type: application/json
+
+###
+//update product admin
+PUT http://localhost:4500/api/update-product/600fff153e0c7c7158bff6e1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBmZmVhNDNlMGM3YzcxNThiZmY2ZGYiLCJuaWNrbmFtZSI6ImF2aXNoIiwiaWF0IjoxNjExNjYwOTY0fQ.BIaHaJwzu3MbqrJAIFQCF4or106CTQ8GVxKUCRFdMRc
+
+{
+"productName":"Wine",
+"description":"carmel wine",
+"price": 60
+}
+###
+// delete product admin
+DELETE http://localhost:4500/api/delete-product/600fff153e0c7c7158bff6e1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDBmZmVhNDNlMGM3YzcxNThiZmY2ZGYiLCJuaWNrbmFtZSI6ImF2aXNoIiwiaWF0IjoxNjExNjYwOTY0fQ.BIaHaJwzu3MbqrJAIFQCF4or106CTQ8GVxKUCRFdMRc
+
+###
+//add categories
+POST http://localhost:4500/api/add-categories
+Content-Type: application/json
+
+{
+    "category": "Wine & Drinks"
+}
+###
+//get categories
+GET http://localhost:4500/api/categories
+Content-Type: application/json
+
+###
+POST  http://localhost:4500/api/add-cart
+Content-Type: application/json
+
+{
+"userid": "6016a51075721d573c2259bd",
+"productid": "600ffebb3e0c7c7158bff6e0",
+"quantity": 2,
+"totalPrice": 30
+}
+
+###
+GET http://localhost:4500/api/carts/60168ac9ab69d624b8a4271e
+Content-Type: application/json
+
+###
+PUT http://localhost:4500/api/update-cart/602a47bb52a7535984400d20
+Content-Type: application/json
+
+{
+"userid": "60168ac9ab69d624b8a4271e",
+"productid": "600ffebb3e0c7c7158bff6e0",
+"quantity": 3,
+"totalPrice": 45
+}
+
+###
+DELETE http://localhost:4500/api/delete-cart/602a48ca7c8798534022dbb2
+Content-Type: application/json
