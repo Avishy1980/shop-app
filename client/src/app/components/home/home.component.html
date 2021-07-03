@@ -1,0 +1,31 @@
+<div style="float: right; margin:10px">
+    <button mat-raised-button color="accent" (click)="logout()">LogOut</button>
+</div>
+<mat-grid-list cols="2" rowHeight="2:2">
+    <mat-grid-tile>
+        <mat-card style="margin-top:50px; width:90%; height:80%">
+            <app-cart-items></app-cart-items>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card style="margin-top:50px; width:90%; height:80%">
+            <div>
+                <div *ngFor="let p of _products">
+                    <mat-card style="background-color: white;
+             color: black;
+             height: 150px;
+              width: 150px; 
+              margin:5px">
+                        <div>
+                            <p>{{p.productName}}</p>
+                            <p>{{p.description}}</p>
+                            <p>{{p.price}}</p>
+                            <p>{{p.url}}</p>
+                            <button mat-raised-button color="accent">Add to cart</button>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,59 @@
+<div class="container">
+    <form [formGroup]="form" class="example-form">
+        <!-- name -->
+        <mat-form-field class="example-full-width">
+            <mat-label>name</mat-label>
+            <input type="name" matInput formControlName="name" placeholder="Name">
+            <mat-error *ngIf="form.hasError('name') && !form.hasError('required')">
+                Please enter a valid name 
+            </mat-error>
+            <mat-error *ngIf="form.hasError('required')">
+                name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- name -->
+
+        <!-- email -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Email">
+            <mat-error *ngIf="form.hasError('email') && !form.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="form.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- email -->
+
+        <!-- password -->
+        <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Password">
+            <mat-error *ngIf="form.hasError('password') && !form.hasError('required')">
+                Please enter a valid password 
+            </mat-error>
+            <mat-error *ngIf="form.hasError('required')">
+                password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- password -->
+
+        <!-- nickname -->
+        <mat-form-field class="example-full-width">
+            <mat-label>nickname</mat-label>
+            <input type="nickname" matInput formControlName="nickname" placeholder="Nickname">
+            <mat-error *ngIf="form.hasError('nickname') && !form.hasError('required')">
+                Please enter a valid nickname 
+            </mat-error>
+            <mat-error *ngIf="form.hasError('required')">
+                nickname is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- nickname -->
+        <button mat-flat-button color="primary" [disabled]="!form.valid" (click)="reg()">Register</button>
+        <div style="padding-top: 15px">
+            <a routerLink="/login" >have an account? -Login</a>
+        </div>
+    </form>
+</div>

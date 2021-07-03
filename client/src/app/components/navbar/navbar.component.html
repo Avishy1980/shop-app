@@ -1,0 +1,17 @@
+<p>
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>{{user?user.nickname:'' }}</span>
+        <span class="example-spacer"></span>
+        <span>
+        <mat-icon>search</mat-icon>
+        </span>
+    </mat-toolbar>
+</p>
+<div style="float: right; margin:10px">
+    <button mat-raised-button color="accent" routerLink="/">Home</button>
+    <button mat-raised-button color="accent" routerLink="/about">about</button>
+    <button mat-raised-button color="accent" routerLink="/details">details</button>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <form [formGroup]="Loginform" class="example-form">
+        <!-- email -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Email">
+            <mat-error *ngIf="Loginform.hasError('email') && !Loginform.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="Loginform.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- email -->
+
+        <!-- password -->
+        <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Password">
+            <mat-error *ngIf="Loginform.hasError('password') && !Loginform.hasError('required')">
+                Please enter a valid password 
+            </mat-error>
+            <mat-error *ngIf="Loginform.hasError('required')">
+                password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- password -->
+        <button mat-flat-button color="primary" [disabled]="!Loginform.valid" (click)="log()">Login</button>
+        <div style="padding-top: 15px">
+            <a routerLink="/register" >don't have an account yet? Register</a>
+        </div>
+    </form>
+</div>
+<!-- <app-about></app-about>
+<app-details></app-details> -->
